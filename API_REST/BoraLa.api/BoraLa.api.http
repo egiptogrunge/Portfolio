@@ -1,0 +1,6 @@
+@BoraLa.api_HostAddress = http://localhost:5287
+
+GET {{BoraLa.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
