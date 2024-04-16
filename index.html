@@ -13,6 +13,259 @@
     .contactos {
       color: #f7f7f7e6;
     }
+
+    @import url('https://rsms.me/inter/inter.css');
+
+.h {
+  color: white;
+}
+
+body.temaDark {
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  background-color: #353440;
+  color: #f7f7f7e6;
+}
+
+body.temaClaro {
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  background-color: #fcfcfc;
+  color: #3d3d3de6;
+}
+
+.paragrafo, .paragrafOculto {
+  font-size: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  background-color: #000000;
+  padding: 20px;
+  width: 200px;
+}
+
+/* para melhorar leitura em dispositivos móveis */
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    width: 20%;  /* a sidebar ocupa apenas 20% em telm. */
+  }
+
+  #fotoPerfil {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .paragrafo,
+  .paragrafOculto {
+    font-size: 15px;
+  }
+
+  .contactos {
+    font-size: 0.5rem;
+  }
+
+  #gifDeluxom {
+    max-width: 100%;
+  }
+
+  .formulario {
+    font-size: 0.5rem;
+  }
+
+  #meuEmail, #deluxomSite {
+    max-width: 50%;
+  }
+}
+
+#fotoPerfil {
+  margin-top: 10px;
+  overflow: hidden;
+  padding: auto;
+  width: 200px;
+  border-radius: 10%;
+  box-shadow: 8px 8px 8px rgba(255, 248, 248, 0.193);
+  /* Sombra da imagem */
+}
+
+#fotoPerfil:hover {
+  transform: scale(1.2); /*imagem aumenta 1,2x*/
+  transition: transform 0.5s ease-out; /*suaviza animacao*/
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra desaparece ao passar o rato */
+  transition: box-shadow 0.5s ease-out;
+}
+
+.contactos {
+  margin-top: 5px;
+}
+
+#meuEmail, #deluxomSite {
+  color: #7bb6f5;
+  text-decoration: none;
+}
+
+#meuEmail:hover, #deluxomSite:hover {
+  color: #93a7bb;
+  text-decoration: underline;
+}
+
+#gifDeluxom {
+  width: 200px;
+  height: auto;
+}
+
+#gifDeluxom:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-out;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: auto; /* para centrar o .main-content */
+}
+
+.header {
+  background-color: #353440;
+  padding: 10px;
+  text-align: center;
+}
+
+.bio {
+  max-width: 600px;
+}
+
+.svg {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.footer {
+  background-color: #333;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+textarea {
+  margin-top: 10px;
+  width: 100%;
+}
+
+#paragrafosRestantes {
+  /*para por os paragrafos ocultos*/
+  display: none;
+}
+
+/* Estilo do botão saber mais */
+#saberMaisBtn {
+  background-color: #007bff;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  border-radius: 15px 10px 15px 5px;  /* assim defino para cada canto */
+  border: 2px solid #000;
+  margin-bottom: 10px;  /* espaçamento para o elemento a baixo */
+}
+
+#verExpProf {
+  font-family: 'Inter', sans-serif;
+  font-size: 25px;
+  border: 2px solid black;
+  border-radius: 15px 10px 15px 5px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+#saberMaisBtn:hover, #verExpProf:hover{
+  background-color: #0056b3;
+}
+
+#mudarTema:hover {
+  background-color: #0056b3;
+  color: #fff;
+  border: 2px solid #000;
+}
+
+
+
+
+/* Estilos Bootstraap para formulario*/
+.formulario {
+  max-width: 600px;
+  /* Largura max */
+  margin: auto;
+}
+
+/* Estilo geral */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* Estilo do botão de submissao */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  /* Cor ao passar rato */
+}
+
+/* Espacamento entre botão e formulário */
+.formulario button {
+  margin-top: 1rem;
+}
+
+/* Estilo inputs e select */
+.form-control {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:hover {
+  border-color: #80bdff;
+}
+
+/* focus-- para editar estilo quando temos o campo activo */
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
   </style>
   <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">-->
   <script>
@@ -82,9 +335,6 @@ function alternaTema() {
         body.classList.add('temaDark');
     }
 }
-
-
-
     
   </script>
 </head>
