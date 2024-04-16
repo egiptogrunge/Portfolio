@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Curta biografia e CV de José do Egipto Ferreira Antunes">
+  <meta name="keywords" content="Biografia, CV, José Antunes, José do Egipto, IT">
+  <meta name="author" content="José do Egipto Ferreira Antunes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="homestyles.css">
+  <title>José do Egipto - Bio</title>
+  <style>
+    .contactos {
+      color: #f7f7f7e6;
+    }
+
+    @import url('https://rsms.me/inter/inter.css');
+
+.h {
+  color: white;
+}
+
+body.temaDark {
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  background-color: #353440;
+  color: #f7f7f7e6;
+}
+
+body.temaClaro {
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  background-color: #fcfcfc;
+  color: #3d3d3de6;
+}
+
+.paragrafo, .paragrafOculto {
+  font-size: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  background-color: #000000;
+  padding: 20px;
+  width: 200px;
+}
+
+/* para melhorar leitura em dispositivos móveis */
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    width: 20%;  /* a sidebar ocupa apenas 20% em telm. */
+  }
+
+  #fotoPerfil {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .paragrafo,
+  .paragrafOculto {
+    font-size: 15px;
+  }
+
+  .contactos {
+    font-size: 0.5rem;
+  }
+
+  #gifDeluxom {
+    max-width: 100%;
+  }
+
+  .formulario {
+    font-size: 0.5rem;
+  }
+
+  #meuEmail, #deluxomSite {
+    max-width: 50%;
+  }
+}
+
+#fotoPerfil {
+  margin-top: 10px;
+  overflow: hidden;
+  padding: auto;
+  width: 200px;
+  border-radius: 10%;
+  box-shadow: 8px 8px 8px rgba(255, 248, 248, 0.193);
+  /* Sombra da imagem */
+}
+
+#fotoPerfil:hover {
+  transform: scale(1.2); /*imagem aumenta 1,2x*/
+  transition: transform 0.5s ease-out; /*suaviza animacao*/
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra desaparece ao passar o rato */
+  transition: box-shadow 0.5s ease-out;
+}
+
+.contactos {
+  margin-top: 5px;
+}
+
+#meuEmail, #deluxomSite {
+  color: #7bb6f5;
+  text-decoration: none;
+}
+
+#meuEmail:hover, #deluxomSite:hover {
+  color: #93a7bb;
+  text-decoration: underline;
+}
+
+#gifDeluxom {
+  width: 200px;
+  height: auto;
+}
+
+#gifDeluxom:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-out;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: auto; /* para centrar o .main-content */
+}
+
+.header {
+  background-color: #353440;
+  padding: 10px;
+  text-align: center;
+}
+
+.bio {
+  max-width: 600px;
+}
+
+.svg {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.footer {
+  background-color: #333;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+textarea {
+  margin-top: 10px;
+  width: 100%;
+}
+
+#paragrafosRestantes {
+  /*para por os paragrafos ocultos*/
+  display: none;
+}
+
+/* Estilo do botão saber mais */
+#saberMaisBtn {
+  background-color: #007bff;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  border-radius: 15px 10px 15px 5px;  /* assim defino para cada canto */
+  border: 2px solid #000;
+  margin-bottom: 10px;  /* espaçamento para o elemento a baixo */
+}
+
+#verExpProf {
+  font-family: 'Inter', sans-serif;
+  font-size: 25px;
+  border: 2px solid black;
+  border-radius: 15px 10px 15px 5px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+#saberMaisBtn:hover, #verExpProf:hover{
+  background-color: #0056b3;
+}
+
+#mudarTema:hover {
+  background-color: #0056b3;
+  color: #fff;
+  border: 2px solid #000;
+}
+
+
+
+
+/* Estilos Bootstraap para formulario*/
+.formulario {
+  max-width: 600px;
+  /* Largura max */
+  margin: auto;
+}
+
+/* Estilo geral */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* Estilo do botão de submissao */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  /* Cor ao passar rato */
+}
+
+/* Espacamento entre botão e formulário */
+.formulario button {
+  margin-top: 1rem;
+}
+
+/* Estilo inputs e select */
+.form-control {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:hover {
+  border-color: #80bdff;
+}
+
+/* focus-- para editar estilo quando temos o campo activo */
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+  </style>
+  <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">-->
+  <script>
+
+function validateForm() {
+
+    //variáveis
+    let nome = document.forms["contactar"]["nome"].value;
+    let email = document.forms["contactar"]["email"].value;
+    let motivo = document.forms["contactar"]["motivoContacto"].value;
+
+    if (nome == '') {
+        alert("Deve preencher o seu nome.");
+        return false;
+    }
+
+    if (email == '') {
+        alert("Deve preencher o seu email.");
+        return false;
+    }
+
+    if (motivo == '') {
+        alert("Por favor indique um motivo.");
+        return false;
+    }
+
+    //validação
+    console.log(nome);
+    console.log(email);
+    console.log(motivo);
+
+    alert("Submetido");
+
+    //retorno fake
+    return false;
+}
+
+
+function mostraEsconde() {
+    // Exibe os paragrafos ocultos e oculta o botão
+
+    var paragrafosRestantes = document.getElementById('paragrafosRestantes');
+    var estiloAtual = window.getComputedStyle(paragrafosRestantes);
+    var botao = document.getElementById('saberMaisBtn');
+
+    if (estiloAtual.display === "none") {
+        //console.log("Os parágrafos estão ocultos.");
+        document.getElementById('paragrafosRestantes').style.display = 'block';
+        botao.innerText = 'Esconder'
+    } else {
+        //console.log("Os parágrafos estão visíveis.");
+        document.getElementById('paragrafosRestantes').style.display = 'none';
+        botao.innerText = 'Mostrar Mais'
+    }
+}
+
+function alternaTema() {
+    var body = document.body;
+
+    if (body.classList.contains('temaDark')) {
+        console.log("entrou no if");
+        body.classList.remove('temaDark');
+        body.classList.add('temaClaro');
+    } else {
+        console.log("entrou no else");
+        body.classList.remove('temaClaro');
+        body.classList.add('temaDark');
+    }
+}
+    
+  </script>
+</head>
+
+<body class="temaDark">
+
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="perfil">
+        <img src="./imagens/fotoPerfil2.jpg" alt="Foto de fotoPerfil" id="fotoPerfil">
+      </div>
+      <div class="contactos">
+        <marquee behavior="scroll" direction="right">
+          <h3 style="text-align: center;"><ins>Contactos:</ins></h3>
+        </marquee>
+        <p>Email: <a id="meuEmail" href="mailto:egiptogrunge@hotmail.com" target="_blank">egiptogrunge@hotmail.com</a>
+        </p>
+        <p>Cidade: Braga</p>
+        <p>Animação de Eventos: <a id="deluxomSite" href="https://www.deluxom.com" target="_blank">www.deluxom.com</a>
+        </p>
+        <img src="./imagens/Deluxom_gif_croped.gif" alt="GIF Animado Deluxom" id="gifDeluxom">
+        <div class="svg">
+          <svg width="50" height="50" viewBox="0 0 100 100">
+            <!-- circulo dourado -->
+            <circle cx="50" cy="50" r="40" fill="gold" />
+
+            <!-- Pentagrama verde -->
+            <polygon points="50,90 61.8,64.5 90.1,64.5 67.3,45.5 79,20 50,38.5 21,20 32.7,45.5 9.9,64.5 38.2,64.5"
+              fill="black" />
+          </svg>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <h1 style="color: white;">José do Egipto Ferreira Antunes</h1>
+      </header>
+      <div class="bio">
+        <h3 style="text-align: center;"><em><ins>Apaixonado por aprender e experimentar!!!</ins></em></h3>
+        <div id="paragrafoResumo" class="paragrafo">
+          <p>
+            Desde cedo que sou apaixonado por aprender, e aplicar o conhecimento no desenvolvimento de novas coisas ou
+            ideias.
+            Esta curiosidade inata resultou num doutoramento em Engenharia Química e Biológica, onde realizei
+            investigação na área da bioquímica computacional. A investigação obrigou-me a usar muitas ferramentas e
+            procedimentos
+            das áreas de IT, o que me fez relembrar o meu gosto pela área, perceber que tinha competências, e me fez
+            querer aprender mais.
+            Comecei de forma autodidata a estudar Python e Data Science, e frequento agora o programa UpSklill no curso
+            de Power Platform.
+          </p>
+        </div>
+
+        <!-- Conteúdo oculto -->
+        <div id="paragrafosRestantes" class="paragrafOculto">
+          <p>
+            A pandemia do COVID coincidiu com o término de uma bolsa de investigação, deixando-me numa situação delicada
+            de desemprego e
+            falta de oportunidades. Acabei por ir trabalhar numa industria exportadora com o objetivo de expandir a
+            carteira de clientes.
+            Rápidamente me foram atribuídas responsabilidades na logística, operações e até na gestão da empresa, pois
+            fui conseguindo
+            melhorar processos e eficiência da empressa fazendo uso das minhas competências adquiridas ao longo da minha
+            formação e da
+            investigação. Apesar de ter atingido um papel importante na empressa, sentia já alguma estagnação de
+            aprendizagem e poucas
+            prespetivas de formação futura. Descobri a iniciativa UpSklill, na qual decidi arriscar devido a ser uma
+            oportunidade única de continuar
+            a desenvolver-me técnicamente numa área de futuro.
+          </p>
+          <p>
+            Desde jovem que sempre tive part-times, muito deles indeferênciados. Depois de vários anos a trabalhar na
+            área da animação musical de
+            eventos, fundei em 2018 a Deluxom Produções. Temos crescido consistentemente e contamos já com 6
+            colaboradores. Estas experiências permitiram
+            desenvolver as minhas competências de gestão, marketing, vendas, finanças, atendimento ao clientes e até de
+            investimento.
+          </p>
+          <p>
+            Sou assim alguém que, mesmo não sendo o especialista absoluto numa área, combino formação académica sólida e
+            experiência diversificada,
+            oferecendo uma valiosa contribuição para empresas que procurem dedicação, versatilidade, inteligência e,
+            principalmente,
+            uma constante vontade de aprender e evoluir, fazer mais e melhor.
+          </p>
+        </div>
+
+        <!-- Botão "Saber mais" -->
+        <button id="saberMaisBtn" onclick="mostraEsconde()">Saber mais</button>
+        
+        <!-- gif work -->
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <img src="./imagens/work.gif" alt="GIF Work" id="gifWork">
+        </div>
+
+        <!-- Botão para pagina2 -->
+        <div id="expProfissional" style="text-align: center;">
+          <button type="button" id="verExpProf" onclick="window.location.href='./expProfissional.html'">Ver Experiência
+            profissional detalhada</button>
+
+          <div class="formulario">
+            <h2 class="mt-4">Qualquer questão contacte:</h2>
+            <form name="contactar" onsubmit="return validateForm();" method="POST">
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira nome." />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Insira Email"
+                  autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="motivoContacto">Motivo de Contacto</label>
+                <select class="form-control" id="motivoContacto" name="motivoContacto">
+                  <option value="trabalho">Trabalho IT</option>
+                  <option value="eventos">Trabalho Eventos</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+          </div>
+          <br>
+
+
+          <footer class="footer" style="display: flex; align-items: center; justify-content: center;">
+            <div class="button-Container">
+              <button type="button" id="mudarTema" onclick="alternaTema()"
+                style="margin: auto; border: 2px solid #000;">Alterar Tema</button>
+            </div>
+          </footer>
+    </main>
+  </div>
+</body>
+
+</html>
