@@ -9,10 +9,241 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="expProfStyles.css">
     <title>José do Egipto - Experiência profissional</title>
-    <script src="expProfScripts.js"></script>
+    <script>
+        function alternaTema() {
+            var body = document.body;
+
+            if (body.classList.contains('temaDark')) {
+                body.classList.remove('temaDark');
+                body.classList.add('temaClaro');
+            }
+
+            else {
+                body.classList.remove('temaClaro');
+                body.classList.add('temaDark');
+            }
+        }
+
+    </script>
     <style>
         .contactos {
             color: #f7f7f7e6;
+        }
+
+        @import url('https://rsms.me/inter/inter.css');
+
+        .h {
+            color: white;
+        }
+
+        body.temaDark {
+            margin: 0 auto;
+            font-family: 'Inter', sans-serif;
+            background-color: #353440;
+            color: #f7f7f7e6;
+        }
+
+        body.temaClaro {
+            margin: 0 auto;
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc;
+            color: #3d3d3de6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .sidebar {
+            flex-shrink: 0;
+            background-color: #000000;
+            /* Cor de fundo para a barra lateral */
+            padding: 20px;
+            width: 200px;
+        }
+
+        /* para melhorar leitura em dispositivos móveis */
+        @media only screen and (max-width: 768px) {
+            .sidebar {
+                width: 20%;
+                /* a sidebar ocupa apenas 20% em telm. */
+            }
+
+            #fotoPerfil {
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .contactos {
+                font-size: 0.5rem;
+            }
+
+            #gifDeluxom {
+                max-width: 100%;
+            }
+
+            .formulario {
+                font-size: 0.5rem;
+            }
+        }
+
+        #fotoPerfil {
+            margin-top: 10px;
+            overflow: hidden;
+            padding: auto;
+            width: 200px;
+            border-radius: 10%;
+            box-shadow: 8px 8px 8px rgba(255, 248, 248, 0.193);
+            /* Sombra da imagem */
+        }
+
+        #fotoPerfil:hover {
+            transform: scale(1.2);
+            /*imagem aumenta 1,2x*/
+            transition: transform 0.5s ease-out;
+            /*suaviza a animacao*/
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.5s ease-out;
+        }
+
+        .contactos {
+            margin-top: 5px;
+        }
+
+        #meuEmail,
+        #deluxomSite {
+            color: #7bb6f5;
+            text-decoration: none;
+        }
+
+        #meuEmail:hover,
+        #deluxomSite:hover {
+            color: #93a7bb;
+            text-decoration: underline;
+        }
+
+        #gifDeluxom {
+            width: 200px;
+            height: auto;
+        }
+
+        #gifDeluxom:hover {
+            transform: scale(1.1);
+            transition: transform 0.5s ease-out;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: auto;
+            /* para centrar o .main-content */
+        }
+
+        .header {
+            background-color: #353440;
+            padding: 10px;
+            text-align: center;
+        }
+
+
+        /* Estilo das janelas flutuantes */
+        .temaDark .experiencia {
+            background-color: #333;
+            border: 3px solid #b9aa67;
+            border-radius: 40px 10px 10px 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: #fff;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+
+        }
+
+        .temaClaro .experiencia {
+            background-color: #f9f9f9;
+            border: 3px solid #c6ae43;
+            border-radius: 40px 10px 10px 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: #333;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* animacao com o rato */
+        .experiencia-dark:hover,
+        .experiencia-light:hover {
+            transform: translateY(-5px);
+        }
+
+        .experiencia h2 {
+            color: #baa238;
+        }
+
+        .temaClaro .experiencia p {
+            color: #000
+        }
+
+        .experiencia p {
+            /*duracao, local e tipo de exp*/
+            color: #ccc;
+        }
+
+        .experiencia li {
+            /*lista de tarefas*/
+            color: #fff;
+            margin-left: 20px;
+        }
+
+        .temaClaro .experiencia li {
+            color: #000
+        }
+
+        /* marca das listas */
+        .experiencia li::before {
+            content: "\2022";
+            /* codigo do caracter */
+            color: #b9aa67;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+
+        .svg {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+
+        .footer {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        textarea {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        #mudarTema:hover,
+        #voltarInicio:hover {
+            background-color: #0056b3;
+            color: #fff;
+            border: 2px solid #000;
         }
     </style>
 </head>
@@ -56,9 +287,9 @@
             <div class="bio">
                 <h3 style="text-align: center;"><em><ins>Experiência profissional</ins></em></h3>
                 <div id="experienciasProfissionais" class="experiencias tema-dark">
-                    
-                     <!-- Janela flutuante -->
- 
+
+                    <!-- Janela flutuante -->
+
                     <div class="experiencia">
                         <h2>Gestor de Clientes e apoio à decisão B2B</h2>
                         <p>Centelhas Ceramic, Barcelos - de 19/04/2021 a 2/11/2023</p>
@@ -74,7 +305,8 @@
                         <p>Universidade do Minho - de 11/2012 até a 12/2019</p>
                         <p>Trabalho de investigação na área da bioquímica estrutural computacional:</p>
                         <li>Simulações de Dinâmica Molecular (GROMACS);</li>
-                        <li>Criação de modelos computacionais de diversos elementos biológicos (membranas, proteínas, lípidos, drogas);</li>
+                        <li>Criação de modelos computacionais de diversos elementos biológicos (membranas, proteínas,
+                            lípidos, drogas);</li>
                         <li>Análise estatística e tratamentos de dados;</li>
                         <li>Elaboração de relatórios técnicos;</li>
                         <li>Publicação de artigos em jornais Científicos.</li>
@@ -83,7 +315,8 @@
                     <div class="experiencia">
                         <h2>Fundador e Gestor da Deluxom Produções</h2>
                         <p>Braga - de 04/2018 até a atualidade</p>
-                        <p>Gestão de uma pequena empresa de animação musical de eventos, com cerca de 6 colaboradores: </p>
+                        <p>Gestão de uma pequena empresa de animação musical de eventos, com cerca de 6 colaboradores:
+                        </p>
                         <li>Gestão de recursos, financeira e operacional;</li>
                         <li>Formação dos colaboradores;</li>
                         <li>Gestão e aquisição de clientes;</li>
@@ -91,7 +324,7 @@
                         <li>Apoio à decisão e à negociação com clientes.</li>
                     </div>
 
-                     <div class="experiencia">
+                    <div class="experiencia">
                         <h2>Técnico de animação musical de eventos</h2>
                         <p>Braga - de 07/2011 até a atualidade</p>
                         <p>Responsável pela animação musical de eventos (casamentos, batizados, corporativos);</p>
