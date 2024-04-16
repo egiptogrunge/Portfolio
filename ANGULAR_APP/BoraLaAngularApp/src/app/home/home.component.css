@@ -1,0 +1,89 @@
+.home-container {
+    position: relative;
+    width: 100%;
+    /* height: 100vh;  Altura total da viewport */
+    overflow: hidden;
+  }
+  
+  .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 1; /* remove opacidade*/
+  }
+  
+ /* feed.component.css */
+.feeds {
+    margin-top: 10px; /* espaço para o topo */
+    display: flex;
+    flex-direction: column; /* Para cada post aparecer abaixo do anterior */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se necessário */
+  }
+  
+  .feed-container {
+    width: 100%; /* Ajuste a largura conforme necessário */
+    max-width: 800px; /* Adicione uma largura máxima se desejar */
+    box-sizing: border-box; /* Isso evita que as bordas e o preenchimento aumentem a largura total */
+    margin: 10px;
+  }
+  
+  .feed {
+    background: rgba(255, 255, 255, 0.89);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-sizing: border-box; /* Isso evita que as bordas e o preenchimento aumentem a largura total */
+    border: 1px solid #787676; /* Adicione uma borda para dar destaque ao feed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adicione uma sombra para dar mais destaque */
+  }
+  
+  .post {
+    margin-bottom: 20px;
+  }
+  
+  .user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .username {
+    font-weight: bold;
+  }
+
+  .post-pic {
+    width: 80%; /* a imagem do post ocupará 100% da largura do container */
+    height: auto; /* mantém a proporção original da imagem */
+    display: block;
+    margin: 10px auto; /* adiciona algum espaçamento acima e abaixo da imagem */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave no efeito de escala ao passar o rato */
+
+  }
+
+  .post-content {
+    text-align: justify; /* alinha o texto justificado */
+  }
+  
+  .username a {
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    color: black;
+    transition: color 0.3s ease; /* Adiciona uma transição suave na cor do texto */
+  }
+  
+  .username a:hover {
+    color: blue; /* Cor do texto ao passar o rato */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  }
+
+.user-info img:hover, .post-pic:hover {
+  transform: scale(1.1); /* Aumenta a escala ao passar o rato para dar um efeito de destaque */
+  cursor: pointer;
+}

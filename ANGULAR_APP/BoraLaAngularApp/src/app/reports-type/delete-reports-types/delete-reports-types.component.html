@@ -1,0 +1,33 @@
+<h2 style="padding: 20px;">Eliminar Tipo de Denúncia</h2>
+
+<form [formGroup]="deleteForm" (ngSubmit)="delete()" class="custom-form">
+  <div class="form-group">
+    <label for="idReportType">ID do Tipo:</label>
+    <input type="text" formControlName="idReportType" class="form-control" id="idReportType" required name="id" [(ngModel)]="reportType.idReportType">
+  </div>
+  <button type="submit" class="btn btn-primary mb-3 mr-3">Apagar</button>
+</form>
+
+<form [formGroup]="readForm" (ngSubmit)="getById()">
+  <div class="form-group"></div>
+
+</form>
+
+<div *ngIf="carregado">
+  <table class="table table-striped">
+    <caption>Informação do tipo de denúncia selecionado</caption>
+    <thead class="table thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tipo de Denúncia</th>
+        <th scope="col">Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{reportType.idReportType}}</td>
+        <td>{{reportType.type}}</td>
+        <td>{{reportType.description}}</td>
+      </tr>
+    </tbody>
+  </table>

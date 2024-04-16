@@ -1,0 +1,18 @@
+<form (submit)="create()">
+    <div class="form-row">
+
+        <div class="form-group mt-3">
+            <label for="inputName">Nome do tipo de denúncia</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Conteúdo abusivo" name="type" [(ngModel)]="reportType.type">
+        </div>
+        <div class="form-group mt-3">
+            <label for="inputName">Descrição</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Conteúdo que ..." name="description" [(ngModel)]="reportType.description">
+        </div>
+        
+
+        <button type="submit" class="btn btn-primary mt-3">Criar novo</button>
+
+    </div> 
+  
+</form>

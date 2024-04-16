@@ -1,0 +1,33 @@
+<section>
+    <div>
+        <table class="table table-striped">
+            <caption>Lista do tipo de Denúncias. Total = {{contagem}}</caption>
+            <thead class="table thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Tipo de Denúncia</th>
+                    <th scope="col">Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let r of reportsTypesList">
+                    <td>{{r.idReportType}}</td>
+                    <td>{{r.type}}</td>
+                    <td>{{r.description}}</td>
+                    <td>
+                        <a [routerLink]="['/update-reports-types', r.idReportType]" routerLinkActive="true">
+                            Editar
+                            <img src="/assets/images/edit.svg" alt="Editar" width="16" height="16">
+                        </a>
+                    </td>
+                    <td>
+                        <a [routerLink]="['/delete-reports-types', r.idReportType]" routerLinkActive="true">
+                            Apagar
+                            <img src="/assets/images/delete.svg" alt="Editar" width="16" height="16">
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

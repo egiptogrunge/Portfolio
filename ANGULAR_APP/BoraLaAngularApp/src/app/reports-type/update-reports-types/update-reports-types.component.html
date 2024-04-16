@@ -1,0 +1,17 @@
+<h2 style="padding: 20px;">Editar Tipo de Denúncia</h2>
+
+<form [formGroup]="updateForm" (ngSubmit)="update()" class="custom-form">
+  <div class="form-group">
+    <label for="idReportType">ID do Tipo:</label>
+    <input type="text" formControlName="idReportType" class="form-control" id="idReportType" required name="type" [(ngModel)]="reportType.idReportType">
+  </div>
+  <div class="form-group">
+    <label for="type">Tipo:</label>
+    <input type="text" formControlName="type" class="form-control" id="type" required [(ngModel)]="reportType.type">
+  </div>
+  <div class="form-group">
+    <label for="description">Descrição:</label>
+    <textarea formControlName="description" class="form-control" id="description" required [(ngModel)]="reportType.description"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Atualizar</button>
+</form>

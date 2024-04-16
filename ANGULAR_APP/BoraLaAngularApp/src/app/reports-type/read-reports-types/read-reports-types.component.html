@@ -1,0 +1,29 @@
+<h2 style="padding: 20px;">Procurar Tipo de Denúncia via ID</h2>
+
+<form [formGroup]="readForm" (ngSubmit)="getById()">
+  <div class="form-group">
+    <label for="idReportType">ID:</label>
+    <input type="text" formControlName="idReportType" class="form-control" id="idReportType" required placeholder="Id do tipo de denúncia a procurar">
+  </div>
+  <button type="submit" class="btn btn-primary">Procurar</button>
+</form>
+
+<div *ngIf="carregado">
+  <table class="table table-striped">
+    <caption>Informação do tipo de denúncia selecionado</caption>
+    <thead class="table thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tipo de Denúncia</th>
+        <th scope="col">Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{reportType.idReportType}}</td>
+        <td>{{reportType.type}}</td>
+        <td>{{reportType.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
