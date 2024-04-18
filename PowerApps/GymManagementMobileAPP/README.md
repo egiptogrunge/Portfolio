@@ -72,8 +72,9 @@ In the home page the user can select the navigation for 3 pages, the gym maintan
 ### Info about page design
 The home page, and most of the pages of the App, were designed using containers (either horizontal or vertical). They have generally at least 3 containers, the header, the footer and the body.
 The body has inner containers according necesity.
-For the header and the footer it was created components, since they will be the same on most pages.
+For the header and the footer it were created components, since they will be the same on most pages.
 
+#### Header Component
 ![Captura de ecrã 2024-04-18 112220](https://github.com/egiptogrunge/Portfolio/assets/161729526/ab2c1d0a-70be-42b9-9dab-5a9c9021cfd6)
 
 For the header component, I have a horizontal container in wich I added 3 Icons. They allow the navigation to home page, go back, and navigation to login page.
@@ -81,4 +82,64 @@ To navigation work I created 3 custom properties, of the screen type, on the com
 The code *App.ActiveScreen* was added at each custom property. Finaly, to work on the App screen, it was added to the custom properties on the screen the code to navigate to the desired page.
 
 Note that some pages have the 3 Icons on the header, but for security reasons not all work. For example, on the page for recover password only the X Icon (to navigate to login page) works.
-This is because the user on the login page can navigate to the recover password page without make the login, meaning that if the home Icon worked the user could acess the app withou loggin.  
+This is because the user on the login page can navigate to the recover password page without make the login, meaning that if the home Icon worked the user could acess the app withou loggin.
+
+#### Footer Component
+![Captura de ecrã 2024-04-18 135418](https://github.com/egiptogrunge/Portfolio/assets/161729526/d1ea4542-7943-4b66-8943-0c0de68d774c)
+
+The footer component just have one vertical container, in which is presented the Version of the App, using the variable "varAppVersion" created on the app start (check the code above).
+
+### Gym management
+### Rooms Page
+![Captura de ecrã 2024-04-18 140042](https://github.com/egiptogrunge/Portfolio/assets/161729526/6ce844ec-8597-4123-8f8c-2c90702df2cd)
+
+When the user click in the Gym Management button on home page, it will be redirect to this page, in which the different Rooms of the gym are presented. The user can select which Room wants to verify. The Room buttons were added as a gallery, that is feeded with a table in dataverse. That table has the gym items to verify (such as the gym machines), the room that each item belongs, and if the item needs to be photographed to considered veryfied (see bellow). To apper the rooms withou repetition I need to use the "distinct" function on the Items gallery propertie (*Distinct('GymTable'; Room*).
+
+![Captura de ecrã 2024-04-18 140732](https://github.com/egiptogrunge/Portfolio/assets/161729526/aee59bfc-9dbb-4a67-9c90-8809bfbadff6)
+
+When the user press the button for the desired Room, the App navigate to the Items page, and create one varible that stores the corresponding room (varRoom).
+
+### Items Page
+![Captura de ecrã 2024-04-18 141513](https://github.com/egiptogrunge/Portfolio/assets/161729526/65bf7e54-ad5b-4579-ac22-7400097db556)
+
+On this page it is presented a gallery with the Items in the GymTable. The Items are filtered using the varRoom created on previous screen (*Filter('GymTable'; Room=varRoom)*). It was also included a Icon of a camera, only in the items which in the table are stated as needing photographs to confimr its condition verification. The Icon also lead to the navigation to the camera page to take pictures of that specific item when pressed. The color of the Icon change from blue to green when the item already has pictures salved in that day. The code used was:
+
+~~~
+//Code in OnSelect Property - For the navigation to camera page:
+Navigate(Camera);;
+Set(varItem; ThisItem);;
+
+//Code in Visible Property - to appear the icon only in the desired items:
+If(ThisItem.temFoto=0; true; false)
+
+//Code in Color Property - To change Icon color if has pictures on that day:
+If(IsBlank(
+    LookUp(FotosSalvas;Item = ThisItem.ItemsVerificar&&Sala=varSala&&Data=Today()).Item);
+    RGBA(0; 84; 148; 1);
+    Color.DarkGreen)
+~~~
+
+![Captura de ecrã 2024-04-18 143457](https://github.com/egiptogrunge/Portfolio/assets/161729526/2596d5e2-fdf5-4bb6-8b5b-39056836251c)
+
+The toogles in each item are for the user indicate that already checked the condition of that item. After a session of verifications, the user can register the verification pressing the button on the bottom. That button patch the data (the items name and room, the status of the toogle and the date) to another table on Dataverse, the table of inspections performed. Here is the code:
+
+~~~
+ForAll(Gallery6.AllItems;
+Patch(ItemsInspecionados; 
+    Defaults(ItemsInspecionados);
+    {
+        Sala: varItem.Local;
+        Data: Today();
+        Item: Title6.Text;
+        EstadoToggle: Toggle1.Value
+    }
+    )
+)
+~~~ 
+
+### Camera Page
+![Captura de ecrã 2024-04-18 145049](https://github.com/egiptogrunge/Portfolio/assets/161729526/41019e9a-9294-4954-9ca9-c61f1d57f9d2)
+
+
+
+
