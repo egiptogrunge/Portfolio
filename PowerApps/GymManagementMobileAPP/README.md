@@ -6,6 +6,9 @@ In this project I created a Canvas App, with Microsoft Power Apps, for mobile us
 The users can login the App, and them can register if they already check all the gym rooms, and if some item needs maintanence/cleaning the user can take pictures with the App and register the issue.
 All the data needed to work is stored in the Microsoft Dataverse.
 
+## Author
+José do Egipto Ferreira Antunes, from Braga, Portugal.
+
 ## Detailed description
 
 ### Login Page
@@ -203,3 +206,40 @@ If(
     )&&
     Navigate(Login;ScreenTransition.Fade);;);;
 ~~~
+
+### Change Password
+![Captura de ecrã 2024-04-18 151702](https://github.com/egiptogrunge/Portfolio/assets/161729526/e867f2cd-52fb-49a5-9f2c-a47f2970e3cb)
+
+Finally, the App has also a page for change the password. It asks for the Username, its actual password and the password which it desire to change.
+When the button is pressed, the software checks if the actual password matches with the username and, if yes, changes the password for the one indicated. It also provide screen notifications if the user is wrong or its password, as well if the operation was sucessfull. The code for that, inserted on the OnSelect property of the button was: 
+
+~~~
+If(
+    IsBlank(LookUp(
+        UsersInfo;
+        Username = Username_reset.Text && Password = OldPassword.Text
+    ));
+    Notify("Nome de usuário não encontrado ou senha incorreta."; NotificationType.Error)
+    &&
+    Reset(Username_reset)
+    &&
+    Reset(NewPassword)
+    ;
+    UpdateIf(
+    UsersInfo;
+    Username = Username_reset.Text && Password = OldPassword.Text;
+    {Password: NewPassword.Text})
+    ;;
+    Notify("Senha redefinida com sucesso."; NotificationType.Success)
+    &&
+    Navigate(Login; ScreenTransition.Fade)
+);;
+~~~
+
+## License
+Anyone can use, copy, modify, merge, publish, and distribute all the software, provided that:
+
+- The software is used for legal purposes only.
+- The software is not used for commercial purposes or financial gain.
+- The author is appropriately credited in any derivative works or distributions.
+- The software is provided "as is," without warranty of any kind, express or implied.
