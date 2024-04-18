@@ -140,6 +140,66 @@ Patch(ItemsInspecionados;
 ### Camera Page
 ![Captura de ecrã 2024-04-18 145049](https://github.com/egiptogrunge/Portfolio/assets/161729526/41019e9a-9294-4954-9ca9-c61f1d57f9d2)
 
+This page allows the user to open the camera of its smartphone (or other equipment) and take pictures of the Items to inspectionate. At the top of the body container it has a square to show the camera view. At the midle has icons to press to take pictures, change camera and to navigate to the gallery page.
+Bellow it present one snapshot of the last picture taken.
+When the icon to take picture is pressed, it also send the picture to a collection. Some relevant code:
 
+~~~
+//OnSelect property of take picture Icon:
+UpdateContext({varImagem: Camera1.Stream});;
+Collect(Galeria; Camera1.Stream);;
 
+//OnSelect property of change camera Icon:
+If(varCamera>=CountRows(Camera1.AvailableDevices);
+    UpdateContext({varCamera:0}); UpdateContext({varCamera: varCamera + 1})
+);;
 
+//OnSelect property of navigate to gallery Icon:
+Navigate(GymGallery)
+~~~
+
+### Gallery Page
+![Captura de ecrã 2024-04-18 150257](https://github.com/egiptogrunge/Portfolio/assets/161729526/7d729687-77bb-4e9a-9363-135c2639fa0f)
+
+On this page it is presented the pictures taken on that App session. It is a Gallery component, allowing the scrooling left-right to see all the pictures.
+It also allows to save or delete each picture, and when saving, add some observations about the item.
+The picture, observations, date, room name and item name, are stored on another dataverse table (FotosSalvas), using the Patch funciton:
+
+~~~
+Patch(FotosSalvas; 
+    Defaults(FotosSalvas);
+    {
+        Sala: varItem.Local;
+        Data: Today();
+        Imagem: {Full: Image5.Image; Value: Image5.Image};
+        Item: varItem.ItemsVerificar;
+        Observacoes: txt_obs.Text
+    }
+)
+~~~
+
+### Recover Password Page
+![Captura de ecrã 2024-04-18 151113](https://github.com/egiptogrunge/Portfolio/assets/161729526/1f0c2b97-a353-4bf8-87ca-60157c53af63)
+
+This page is just to recover the password of a user. It just ask for the Username and then send the password to the email associated on the table of users in dataverse. It also provide notifications on screen about the non existance of a user, or the sucess of the operation. See the code on the button pressing:
+
+~~~
+If(
+    IsBlank(
+        LookUp(
+            UsersInfo;
+            Username = YourUsername.Text));
+    Notify(
+        "Nome de usuário não encontrado. Por favor, verifique e tente novamente.";
+        NotificationType.Error
+    ) && Reset(YourUsername);
+    Office365Outlook.SendEmailV2(LookUp(UsersInfo; Username = YourUsername.Text; Email);
+    "Recuperação de password";
+    "Olá, segue a tua password do sistema de manutenção do ginásio: " & LookUp(UsersInfo; Username = YourUsername.Text; Password))
+    &&
+    Notify(
+        "Senha enviada para: "& LookUp(UsersInfo; Username = YourUsername.Text; Email);
+        NotificationType.Success
+    )&&
+    Navigate(Login;ScreenTransition.Fade);;);;
+~~~
