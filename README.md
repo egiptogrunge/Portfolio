@@ -1,6 +1,22 @@
 # Portfolio
 Portfolio of personal projects or projects in a learning context.
 
+## How to Use
+The projects are distributed in folders. Each type of project has its folder, and inside all the materials. Please refer to the README.md file inside each project folder for detailed guidance.
+
+## Author
+José do Egipto Antunes, Braga, Portugal.
+
+## License
+Anyone can use, copy, modify, merge, publish, and distribute all the software, provided that:
+
+- The software is used for legal purposes only.
+- The software is not used for commercial purposes or financial gain.
+- The author is appropriately credited in any derivative works or distributions.
+- The software is provided "as is," without warranty of any kind, express or implied.
+
+## Projects:
+
 ## SQL Server
 Database creation for a hypothetical application suggesting nearby events to the user. The app was named "Bora Lá," and here it is included all the scripts for CRUD operations and a relational entity scheme.
 
