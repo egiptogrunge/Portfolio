@@ -20,8 +20,8 @@ Anyone can use, copy, modify, merge, publish, and distribute all the software, p
 ## SQL Server
 Database creation for a hypothetical application suggesting nearby events to the user. The app was named "Bora Lá," and here it is included all the scripts for CRUD operations and a relational entity scheme.
 
-## API Rest
-An API developed in C# using Visual Studio, enabling connection to and editing of the database. It facilitates viewing, creation, deletion, and editing of records in one of the database tables (for proof of concept purposes).
+## API Rest Core.NET
+An API Rest Core.NET developed with C# using Visual Studio, enabling connection to and editing of the database. It facilitates viewing, creation, deletion, and editing of records in one of the database tables (for proof of concept purposes).
 
 ## Angular App
 A web application developed with Angular using Visual Studio Code, serving as the front-end for the "Bora Lá" project. It features a home page with a fake feed, an "about us" page, and pages for the previously mentioned API features (viewing, editing, creating, and deleting records in the database) for proof of concept.
