@@ -255,7 +255,6 @@
       width: 290px;
       margin-bottom: 45px;
       text-decoration: none;
-      vertical-align: top;
       background-color: rgb(170, 165, 165);
       word-break: break-all;
       border-radius: 5px;
@@ -310,11 +309,11 @@
       if (estiloAtual.display === "none") {
         //console.log("Os parágrafos estão ocultos.");
         document.getElementById('paragrafosRestantes').style.display = 'block';
-        botao.innerText = 'Esconder'
+        botao.innerText = 'Hide'
       } else {
         //console.log("Os parágrafos estão visíveis.");
         document.getElementById('paragrafosRestantes').style.display = 'none';
-        botao.innerText = 'Mostrar Mais'
+        botao.innerText = 'Know More'
       }
     }
 
@@ -366,9 +365,7 @@
         <img src="./imagens/fotoPerfil2.jpg" alt="Foto de fotoPerfil" id="fotoPerfil">
       </div>
       <div class="contactos">
-        <marquee behavior="scroll" direction="right">
-          <h3 style="text-align: center;">Contacts:</h3>
-        </marquee>
+          <h3 style="text-align: left;">Contacts:</h3>
         <p>E-mail: <a id="meuEmail" href="mailto:egiptogrunge@hotmail.com" target="_blank">egiptogrunge@hotmail.com</a>
         </p>
         <p>Address: Braga, Portugal</p>

@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Experiência profissional de José do Egipto Ferreira Antunes">
-    <meta name="keywords" content="Biografia, CV, José Antunes, José do Egipto, IT">
+    <meta name="description" content="Professional Experience of José do Egipto Ferreira Antunes">
+    <meta name="keywords" content="Biography, CV, José Antunes, José do Egipto, IT">
     <meta name="author" content="José do Egipto Ferreira Antunes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="expProfStyles.css">
-    <title>José do Egipto - Experiência profissional</title>
+    <title>José do Egipto - Professional Experience</title>
     <script>
-        function alternaTema() {
+        function toggleTheme() {
             var body = document.body;
 
-            if (body.classList.contains('temaDark')) {
-                body.classList.remove('temaDark');
-                body.classList.add('temaClaro');
+            if (body.classList.contains('themeDark')) {
+                body.classList.remove('themeDark');
+                body.classList.add('themeLight');
             }
 
             else {
-                body.classList.remove('temaClaro');
-                body.classList.add('temaDark');
+                body.classList.remove('themeLight');
+                body.classList.add('themeDark');
             }
         }
 
     </script>
     <style>
-        .contactos {
+        .contacts {
             color: #f7f7f7e6;
         }
 
@@ -36,14 +36,14 @@
             color: white;
         }
 
-        body.temaDark {
+        body.themeDark {
             margin: 0 auto;
             font-family: 'Inter', sans-serif;
             background-color: #353440;
             color: #f7f7f7e6;
         }
 
-        body.temaClaro {
+        body.themeLight {
             margin: 0 auto;
             font-family: 'Inter', sans-serif;
             background-color: #fcfcfc;
@@ -58,19 +58,16 @@
         .sidebar {
             flex-shrink: 0;
             background-color: #000000;
-            /* Cor de fundo para a barra lateral */
             padding: 20px;
             width: 200px;
         }
 
-        /* para melhorar leitura em dispositivos móveis */
         @media only screen and (max-width: 768px) {
             .sidebar {
                 width: 20%;
-                /* a sidebar ocupa apenas 20% em telm. */
             }
 
-            #fotoPerfil {
+            #photoProfile {
                 max-width: 100%;
             }
 
@@ -78,60 +75,57 @@
                 font-size: 20px;
             }
 
-            .contactos {
+            .contacts {
                 font-size: 0.5rem;
             }
 
-            #gifDeluxom {
+            #deluxomGif {
                 max-width: 100%;
             }
 
-            .formulario {
+            .form {
                 font-size: 0.5rem;
             }
         }
 
-        #fotoPerfil {
+        #photoProfile {
             margin-top: 10px;
             overflow: hidden;
             padding: auto;
             width: 200px;
             border-radius: 10%;
             box-shadow: 8px 8px 8px rgba(255, 248, 248, 0.193);
-            /* Sombra da imagem */
         }
 
-        #fotoPerfil:hover {
+        #photoProfile:hover {
             transform: scale(1.2);
-            /*imagem aumenta 1,2x*/
             transition: transform 0.5s ease-out;
-            /*suaviza a animacao*/
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             transition: box-shadow 0.5s ease-out;
         }
 
-        .contactos {
+        .contacts {
             margin-top: 5px;
         }
 
-        #meuEmail,
+        #myEmail,
         #deluxomSite {
             color: #7bb6f5;
             text-decoration: none;
         }
 
-        #meuEmail:hover,
+        #myEmail:hover,
         #deluxomSite:hover {
             color: #93a7bb;
             text-decoration: underline;
         }
 
-        #gifDeluxom {
+        #deluxomGif {
             width: 200px;
             height: auto;
         }
 
-        #gifDeluxom:hover {
+        #deluxomGif:hover {
             transform: scale(1.1);
             transition: transform 0.5s ease-out;
         }
@@ -143,7 +137,6 @@
             align-items: center;
             padding: 20px;
             margin: auto;
-            /* para centrar o .main-content */
         }
 
         .header {
@@ -152,9 +145,7 @@
             text-align: center;
         }
 
-
-        /* Estilo das janelas flutuantes */
-        .temaDark .experiencia {
+        .themeDark .experience {
             background-color: #333;
             border: 3px solid #b9aa67;
             border-radius: 40px 10px 10px 10px;
@@ -166,7 +157,7 @@
 
         }
 
-        .temaClaro .experiencia {
+        .themeLight .experience {
             background-color: #f9f9f9;
             border: 3px solid #c6ae43;
             border-radius: 40px 10px 10px 10px;
@@ -177,45 +168,39 @@
             transition: transform 0.3s ease-in-out;
         }
 
-        /* animacao com o rato */
-        .experiencia-dark:hover,
-        .experiencia-light:hover {
+        .experience-dark:hover,
+        .experience-light:hover {
             transform: translateY(-5px);
         }
 
-        .experiencia h2 {
+        .experience h2 {
             color: #baa238;
         }
 
-        .temaClaro .experiencia p {
+        .themeLight .experience p {
             color: #000
         }
 
-        .experiencia p {
-            /*duracao, local e tipo de exp*/
+        .experience p {
             color: #ccc;
         }
 
-        .experiencia li {
-            /*lista de tarefas*/
+        .experience li {
             color: #fff;
             margin-left: 20px;
         }
 
-        .temaClaro .experiencia li {
+        .themeLight .experience li {
             color: #000
         }
 
-        /* marca das listas */
-        .experiencia li::before {
+        .experience li::before {
             content: "\2022";
-            /* codigo do caracter */
             color: #b9aa67;
             display: inline-block;
             width: 1em;
             margin-left: -1em;
         }
-
 
         .svg {
             position: fixed;
@@ -239,8 +224,8 @@
             width: 100%;
         }
 
-        #mudarTema:hover,
-        #voltarInicio:hover {
+        #changeTheme:hover,
+        #backToHome:hover {
             background-color: #0056b3;
             color: #fff;
             border: 2px solid #000;
@@ -248,30 +233,25 @@
     </style>
 </head>
 
-<body class="temaDark">
+<body class="themeDark">
 
     <div class="container">
 
         <aside class="sidebar">
-            <div class="perfil">
-                <img src="./imagens/fotoPerfil2.jpg" alt="Foto de fotoPerfil" id="fotoPerfil">
+            <div class="profile">
+                <img src="./imagens/fotoPerfil2.jpg" alt="Profile Photo" id="photoProfile">
             </div>
-            <div class="contactos">
-                <marquee behavior="scroll" direction="right">
-                    <h3 style="text-align: center;"><ins>Contactos:</ins></h3>
-                </marquee>
-                <p>Email: <a id="meuEmail" href="mailto:egiptogrunge@hotmail.com"
+            <div class="contacts">
+                <h3 style="text-align: left;"><ins>Contacts:</ins></h3>
+                <p>Email: <a id="myEmail" href="mailto:egiptogrunge@hotmail.com"
                         target="_blank">egiptogrunge@hotmail.com</a></p>
-                <p>Cidade: Braga</p>
-                <p>Animação de Eventos: <a id="deluxomSite" href="https://www.deluxom.com"
+                <p>City: Braga</p>
+                <p>Event Animation: <a id="deluxomSite" href="https://www.deluxom.com"
                         target="_blank">www.deluxom.com</a></p>
-                <img src="./imagens/Deluxom_gif_croped.gif" alt="GIF Animado Deluxom" id="gifDeluxom">
+                <img src="./imagens/Deluxom_gif_croped.gif" alt="Animated GIF Deluxom" id="deluxomGif">
                 <div class="svg">
                     <svg width="50" height="50" viewBox="0 0 100 100">
-                        <!-- circulo dourado -->
                         <circle cx="50" cy="50" r="40" fill="gold" />
-
-                        <!-- Pentagrama verde -->
                         <polygon
                             points="50,90 61.8,64.5 90.1,64.5 67.3,45.5 79,20 50,38.5 21,20 32.7,45.5 9.9,64.5 38.2,64.5"
                             fill="black" />
@@ -285,63 +265,64 @@
                 <h1 style="color: white;">José do Egipto Ferreira Antunes</h1>
             </header>
             <div class="bio">
-                <h3 style="text-align: center;"><em><ins>Experiência profissional</ins></em></h3>
-                <div id="experienciasProfissionais" class="experiencias tema-dark">
+                <h3 style="text-align: center;"><em><ins>Professional Experience</ins></em></h3>
+                <div id="professionalExperiences" class="experiences theme-dark">
 
-                    <!-- Janela flutuante -->
-
-                    <div class="experiencia">
-                        <h2>Gestor de Clientes e apoio à decisão B2B</h2>
-                        <p>Centelhas Ceramic, Barcelos - de 19/04/2021 a 2/11/2023</p>
-                        <li>Gestão da carteira de clientes;</li>
-                        <li>Aquisição de clientes;</li>
-                        <li>Gestão de stocks e fornecedores;</li>
-                        <li>Gestão de operações e logística;</li>
-                        <li>Apoio à decisão e à negociação com clientes.</li>
+                    <div class="experience">
+                        <h2>Sales Manager and B2B Decision Support</h2>
+                        <p>Centelhas Ceramic, Barcelos - from 04/19/2021 to 11/02/2023</p>
+                        <li>Customer portfolio management;</li>
+                        <li>Sales management;</li>
+                        <li>Customer acquisition;</li>
+                        <li>Stock and supplier management;</li>
+                        <li>Operations and logistics management;</li>
+                        <li>Decision support and negotiation with clients.</li>
                     </div>
 
-                    <div class="experiencia">
-                        <h2>Investigador Científico</h2>
-                        <p>Universidade do Minho - de 11/2012 até a 12/2019</p>
-                        <p>Trabalho de investigação na área da bioquímica estrutural computacional:</p>
-                        <li>Simulações de Dinâmica Molecular (GROMACS);</li>
-                        <li>Criação de modelos computacionais de diversos elementos biológicos (membranas, proteínas,
-                            lípidos, drogas);</li>
-                        <li>Análise estatística e tratamentos de dados;</li>
-                        <li>Elaboração de relatórios técnicos;</li>
-                        <li>Publicação de artigos em jornais Científicos.</li>
+                    <div class="experience">
+                        <h2>Scientific Researcher</h2>
+                        <p>University of Minho - from 11/2012 to 12/2019</p>
+                        <p>Research work in the area of computational structural biochemistry:</p>
+                        <li>Molecular Dynamics Simulations (GROMACS);</li>
+                        <li>Creation of computational models of various biological elements (membranes, proteins,
+                            lipids,
+                            drugs);</li>
+                        <li>Statistical analysis and data treatments;</li>
+                        <li>Preparation of technical reports;</li>
+                        <li>Publication of articles in Scientific journals
+                            <a href="https://www.researchgate.net/profile/Egipto-Antunes">(researchgate profile)</a>.
+                        </li>
                     </div>
 
-                    <div class="experiencia">
-                        <h2>Fundador e Gestor da Deluxom Produções</h2>
-                        <p>Braga - de 04/2018 até a atualidade</p>
-                        <p>Gestão de uma pequena empresa de animação musical de eventos, com cerca de 6 colaboradores:
-                        </p>
-                        <li>Gestão de recursos, financeira e operacional;</li>
-                        <li>Formação dos colaboradores;</li>
-                        <li>Gestão e aquisição de clientes;</li>
-                        <li>Marketing e gestão de mídia;</li>
-                        <li>Apoio à decisão e à negociação com clientes.</li>
+                    <div class="experience">
+                        <h2>Founder and Manager at Deluxom Productions</h2>
+                        <p>Braga - from 04/2018 to present</p>
+                        <p>Management of a small musical event entertainment company, with about 6 collaborators:</p>
+                        <li>Resource, financial, and operational management;</li>
+                        <li>Employee training;</li>
+                        <li>Customer management and acquisition;</li>
+                        <li>Marketing and media management;</li>
+                        <li>Decision support and negotiation with clients.</li>
                     </div>
 
-                    <div class="experiencia">
-                        <h2>Técnico de animação musical de eventos</h2>
-                        <p>Braga - de 07/2011 até a atualidade</p>
-                        <p>Responsável pela animação musical de eventos (casamentos, batizados, corporativos);</p>
-                        <li>DJ em eventos;</li>
-                        <li>Entertainer, apresentador, MC em eventos;</li>
-                        <li>Guitarrista em eventos;</li>
-                        <li>Técnico de som e luz;</li>
-                        <li>Coreógrafo.</li>
+                    <div class="experience">
+                        <h2>Musical Entertainment Technician</h2>
+                        <p>Braga - from 07/2011 to present</p>
+                        <p>Responsible for musical entertainment in events (weddings, baptisms, corporate events);</p>
+                        <li>DJ at events;</li>
+                        <li>Entertainer, presenter, MC at events;</li>
+                        <li>Guitarist at events;</li>
+                        <li>Sound and light technician;</li>
+                        <li>Choreographer.</li>
                     </div>
 
                 </div>
                 <footer class="footer" style="display: flex; align-items: center; justify-content: center;">
                     <div class="button-Container">
-                        <button type="button" id="mudarTema" onclick="alternaTema()"
-                            style="position: relative ; border: 2px solid #000;">Alterar Tema</button>
-                        <button type="button" id="voltarInicio" onclick="window.location.href='./index.html'"
-                            style="position: relative ; border: 2px solid #000;">Voltar ao Início</button>
+                        <button type="button" id="changeTheme" onclick="toggleTheme()"
+                            style="position: relative ; border: 2px solid #000;">Change Theme</button>
+                        <button type="button" id="backToHome" onclick="window.location.href='./index.html'"
+                            style="position: relative ; border: 2px solid #000;">Back to Home</button>
                     </div>
                 </footer>
         </main>
