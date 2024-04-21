@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\egipt\\OneDrive\\Documentos\\GitHub\\Portfolio\\API_REST\\BoraLa.api\\BoraLa.api.csproj": {}
+    "C:\\Users\\egipt\\OneDrive\\Documentos\\GitHub\\Portfolio\\API_Rest\\BoraLa.api\\BoraLa.api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\egipt\\OneDrive\\Documentos\\GitHub\\Portfolio\\API_REST\\BoraLa.api\\BoraLa.api.csproj": {
+    "C:\\Users\\egipt\\OneDrive\\Documentos\\GitHub\\Portfolio\\API_Rest\\BoraLa.api\\BoraLa.api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\egipt\\OneDrive\\Documentos\\GitHub\\Portfolio\\API_REST\\BoraLa.api\\BoraLa.api.csproj",
+        "projectUniqueName": "C:\\Users\\egipt\\OneDrive\\Documentos\\GitHub\\Portfolio\\API_Rest\\BoraLa.api\\BoraLa.api.csproj",
         "projectName": "BoraLa.api",
-        "projectPath": "C:\\Users\\egipt\\OneDrive\\Documentos\\GitHub\\Portfolio\\API_REST\\BoraLa.api\\BoraLa.api.csproj",
+        "projectPath": "C:\\Users\\egipt\\OneDrive\\Documentos\\GitHub\\Portfolio\\API_Rest\\BoraLa.api\\BoraLa.api.csproj",
         "packagesPath": "C:\\Users\\egipt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\egipt\\OneDrive\\Documentos\\GitHub\\Portfolio\\API_REST\\BoraLa.api\\obj\\",
+        "outputPath": "C:\\Users\\egipt\\OneDrive\\Documentos\\GitHub\\Portfolio\\API_Rest\\BoraLa.api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

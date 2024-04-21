@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0OaU8twxqCOOdZUEETAU+LdIOCXzG9FdxD4s4F9pzgrIpMDuARX0qG0K3Vjq97h2w34UUY+CrtO01UmKn89oLg==",
+  "dgSpecHash": "k2KI2Hz+ky3HMalYCZ99evvbMXuSq/qsGJNFlu9ZtTWzcRGnX4GfvGOUTA0yq8FV86i0B3oLFcq9sBu9hTySQQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\egipt\\OneDrive\\Documentos\\GitHub\\Portfolio\\API_REST\\BoraLa.api\\BoraLa.api.csproj",
+  "projectFilePath": "C:\\Users\\egipt\\OneDrive\\Documentos\\GitHub\\Portfolio\\API_Rest\\BoraLa.api\\BoraLa.api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\egipt\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\egipt\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
